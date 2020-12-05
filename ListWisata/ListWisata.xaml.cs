@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Velacro.UIElements.Basic;
+using Velacro.UIElements.Button;
 
 namespace DolanKuyDesktopPalingbaru.ListWisata
 {
@@ -21,9 +22,44 @@ namespace DolanKuyDesktopPalingbaru.ListWisata
     /// </summary>
     public partial class ListWisata : MyPage
     {
+        private BuilderButton buttonBuilder;
+        private IMyButton buttonGet;
+        private List<ModelLocation> listServices;
+        private List<int> actualId = new List<int>();
+
         public ListWisata()
         {
             InitializeComponent();
+            setController(new ListWisataController(this));
+            initUIBuilders();
+            getData();
+        }
+
+        private void initUIBuilders()
+        {
+            buttonBuilder = new BuilderButton();
+        }
+
+        public void getData()
+        {
+            getController().callMethod("getLocation");
+        }
+
+        public void setLocation(List<ModelLocation> locationList)
+        {
+            this.listServices = locationList;
+            /*actualId.Clear();
+            int id = 1;
+            foreach (ModelCategory category in categoryList)
+            {
+                actualId.Add(category.id);
+                category.id = id;
+                id++;
+            }*/
+
+            this.Dispatcher.Invoke((Action)(() => {
+                serviceList.ItemsSource = locationList;
+            }));
         }
     }
 }
