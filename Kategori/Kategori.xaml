@@ -31,8 +31,8 @@
             <TabItem Header="Create List Akomodasi">
                 <Grid Background="#FFFFFF" Margin="0,0,0,0.667">
                     <Label Content="Nama Kategori" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="28"/>
-                    <TextBox HorizontalAlignment="Left" Height="28" Margin="148,10,0,0" TextWrapping="Wrap" Text="Input Nama Kategori" VerticalAlignment="Top" Width="488"/>
-                    <Button Content="Kirim" HorizontalAlignment="Left" Margin="148,62,0,0" VerticalAlignment="Top" Width="488" Background="#FFFF5200" Foreground="White"/>
+                    <TextBox Name="category_txt" HorizontalAlignment="Left" Height="28" Margin="148,10,0,0" TextWrapping="Wrap" Text="Input Nama Kategori" VerticalAlignment="Top" Width="488"/>
+                    <Button Name="category_btn" Content="Kirim" HorizontalAlignment="Left" Margin="148,62,0,0" VerticalAlignment="Top" Width="488" Background="#FFFF5200" Foreground="White"/>
 
                 </Grid>
             </TabItem>
@@ -43,10 +43,12 @@
                             <GridView>
                                 <GridViewColumn DisplayMemberBinding="{Binding id}" Header="ID" Width="40"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding name}" Header="Nama Kategori" Width="120"/>
-                                <GridViewColumn Header="Action" Width="60">
+                                <GridViewColumn Header="Action" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
+                                                <Button Content="Edit" Margin="10" Height="30" BorderBrush="{x:Null}" FontFamily="Montserrat" Background="#FFFD4715" HorizontalAlignment="Left" Width="80" Foreground="White"/>
+                                                <Button Content="Delete" Margin="10" Height="30" BorderBrush="{x:Null}" FontFamily="Montserrat" Background="#FFFD4715" HorizontalAlignment="Left" Width="80" Foreground="White"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>

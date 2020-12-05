@@ -97,9 +97,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Kategori\CategoryController.cs" />
     <Compile Include="Kategori\Kategori.xaml.cs">
       <DependentUpon>Kategori.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Kategori\ModelCategory.cs" />
     <Compile Include="ListWisata\ListWisata.xaml.cs">
       <DependentUpon>ListWisata.xaml</DependentUpon>
     </Compile>
