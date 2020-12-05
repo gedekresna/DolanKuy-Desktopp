@@ -71,10 +71,12 @@
                                     <GridViewColumn DisplayMemberBinding="{Binding contact}" Header="Latitude" Width="60"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding contact}" Header="Longitude" Width="60"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding name}" Header="Photo/Video" Width="80"/>
-                                    <GridViewColumn Header="Action" Width="60">
+                                    <GridViewColumn Header="Action" Width="200">
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Horizontal">
+                                                    <Button Content="Edit" Margin="10" Height="30" BorderBrush="{x:Null}" FontFamily="Montserrat" Background="#FFFD4715" HorizontalAlignment="Left" Width="80" Foreground="White"/>
+                                                    <Button Content="Delete" Margin="10" Height="30" BorderBrush="{x:Null}" FontFamily="Montserrat" Background="#FFFD4715" HorizontalAlignment="Left" Width="80" Foreground="White"/>
                                                 </StackPanel>
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>

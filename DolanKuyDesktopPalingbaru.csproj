@@ -105,6 +105,8 @@
     <Compile Include="ListWisata\ListWisata.xaml.cs">
       <DependentUpon>ListWisata.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListWisata\ListWisataController.cs" />
+    <Compile Include="ListWisata\ModelListWisata.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
