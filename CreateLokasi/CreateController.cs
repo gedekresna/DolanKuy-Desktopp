@@ -11,6 +11,7 @@ namespace DolanKuyDesktopPalingbaru.CreateLokasi
 {
     public class CreateController : MyController
     {
+        String token;
 
         public CreateController(IMyView _myView) : base(_myView) { }
 
@@ -21,10 +22,11 @@ namespace DolanKuyDesktopPalingbaru.CreateLokasi
             string _contact,
             String _latitude,
             String _longitude,
-            String _image,
-            String _id
+            String _id,
+            string _token
         )
         {
+            this.token = _token;
             //MultiPartContent multiPartContent1 = new MultiPartContent(MyFile myFile);
             var client = new ApiClient("http://127.0.0.1:8000/api/");
             var request = new ApiRequestBuilder();
@@ -35,12 +37,12 @@ namespace DolanKuyDesktopPalingbaru.CreateLokasi
                 .addParameters("name", _name)
                 .addParameters("address", _address)
                 .addParameters("description", _description)
-                .addParameters("image", _image)
                 .addParameters("contact", _contact)
                 .addParameters("latitude", _latitude)
                 .addParameters("longitude", _longitude)
                 .setRequestMethod(HttpMethod.Post)
-                .setEndpoint("location/create");
+                .setEndpoint("locations/create");
+            client.setAuthorizationToken(_token);
             client.setOnSuccessRequest(setViewRegisterStatus);
             var response = await client.sendRequest(request.getApiRequestBundle());
 
@@ -54,7 +56,7 @@ namespace DolanKuyDesktopPalingbaru.CreateLokasi
             if (_response.getHttpResponseMessage().Content != null)
             {
                 string status = _response.getHttpResponseMessage().ReasonPhrase;
-                getView().callMethod("setRegisterStatus", status);
+                getView().callMethod("setRegisterStatus", this.token);
             }
 
         }

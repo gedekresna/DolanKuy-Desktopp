@@ -26,9 +26,11 @@ namespace DolanKuyDesktopPalingbaru.Kategori
     {
         private List<ModelCategory> listServices;
         private List<int> actualId = new List<int>();
+        private String token;
 
-        public Kategori()
+        public Kategori(string token)
         {
+            this.token = token;
             InitializeComponent();
             //this.KeepAlive = true;
             setController(new CategoryController(this));
@@ -64,7 +66,7 @@ namespace DolanKuyDesktopPalingbaru.Kategori
         public void onCategoryButtonClick()
         {
             getController().callMethod("postCategory",
-                categoryTxtBox.getText());
+                categoryTxtBox.getText(), this.token);
         }
 
         public void setCategoryStatus(string _status)
