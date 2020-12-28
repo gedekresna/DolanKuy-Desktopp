@@ -24,8 +24,10 @@ namespace DolanKuyDesktopPalingbaru.CreateLokasi
     /// </summary>
     public partial class CreatePage : MyPage
     {
-        public CreatePage()
+        String token;
+        public CreatePage(string token)
         {
+            this.token = token;
             InitializeComponent();
             this.KeepAlive = true;
             setController(new CreateController(this));
@@ -83,8 +85,8 @@ namespace DolanKuyDesktopPalingbaru.CreateLokasi
                 contact_tb1.getText().ToString(),
                 latitude_tb1.getText(),
                 longitude_tb1.getText(),
-                image_tb1.getText(),
-                category_tb1.getText()
+                category_tb1.getText(),
+                this.token
             );
         }
 
