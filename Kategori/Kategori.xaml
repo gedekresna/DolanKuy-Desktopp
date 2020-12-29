@@ -16,12 +16,11 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition  Width="205"/>
-            <ColumnDefinition Width="438.333"/>
+            <ColumnDefinition  Width="Auto"/>
         </Grid.ColumnDefinitions>
 
-        <Button  Grid.Row="0" Grid.Column="1" Content="Log Out" Margin="352,0,0,0" Height="42" BorderBrush="{x:Null}" FontFamily="Montserrat" Background="#FFFD4715" HorizontalAlignment="Left" Width="84" Foreground="White"/>
-        <TextBox  Grid.Row="0" Grid.Column="0" Height="23" TextWrapping="Wrap" Text=" Search For Anything" Margin="10,9,0,10" HorizontalAlignment="Left" Width="536" Grid.ColumnSpan="2"/>
+        <Button  Grid.Row="0" Grid.Column="0" Content="Log Out" Margin="557,0,-35.4,-0.4" Height="42" BorderBrush="{x:Null}" FontFamily="Montserrat" Background="#FFFD4715" HorizontalAlignment="Left" Width="84" Foreground="White"/>
+        <TextBox  Grid.Row="0" Grid.Column="0" Height="23" TextWrapping="Wrap" Text=" Search For Anything" Margin="10,9,0,9.6" HorizontalAlignment="Left" Width="536"/>
 
 
 
@@ -30,8 +29,15 @@
 
 
 
-        <TabControl Margin="0,52,-0.667,-340" Grid.ColumnSpan="2">
-            
+        <TabControl Margin="0,52,-0.333,-340">
+            <TabItem Header="Create List Akomodasi">
+                <Grid Background="#FFFFFF" Margin="0,0,0,0.667">
+                    <Label Content="Nama Kategori" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="28"/>
+                    <TextBox Name="category_txt" HorizontalAlignment="Left" Height="28" Margin="148,10,0,0" TextWrapping="Wrap" Text="Input Nama Kategori" VerticalAlignment="Top" Width="488"/>
+                    <Button Name="category_btn" Content="Kirim" HorizontalAlignment="Left" Margin="148,62,0,0" VerticalAlignment="Top" Width="488" Background="#FFFF5200" Foreground="White"/>
+
+                </Grid>
+            </TabItem>
             <TabItem Header="Tabel List Akomodasi">
                 <Grid Background="#FFFFFF" Margin="0,0,0,57.333" RenderTransformOrigin="0.505,0.588">
                     <ListView x:Name="serviceList" HorizontalAlignment="Stretch" Margin="0,0,0,10" VerticalAlignment="Stretch">

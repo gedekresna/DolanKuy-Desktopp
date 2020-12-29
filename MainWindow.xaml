@@ -15,6 +15,6 @@
         
         <Button Name="loginButton_btn"  Grid.Column="0" VerticalAlignment="Bottom" Content="Login" Width="238" Margin="181,0,181,77"    />
         <TextBox Name="email_txt"  Grid.Column="0" Grid.Row ="0" VerticalAlignment="Center" Height="23" TextWrapping="Wrap" Text="Email"  Width="238" />
-        <TextBox Name="password_txt"  Grid.Column="0"  Grid.Row ="0" VerticalAlignment="Center" Height="22" TextWrapping="Wrap" Text="Password"  Width="238" Margin="181,172,181,116"/>
+        <PasswordBox Name="password_txt"  Grid.Column="0"  Grid.Row ="0" VerticalAlignment="Center" Height="22"   Width="238" Margin="181,172,181,116"/>
     </Grid>
 </basic1:MyWindow>
