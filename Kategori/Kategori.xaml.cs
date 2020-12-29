@@ -55,6 +55,8 @@ namespace DolanKuyDesktopPalingbaru.Kategori
         private IMyTextBox categoryTxtBox;
         private IMyTextBlock categoryStatusTxtBlock;
 
+      
+
         private void initUIElements()
         {
             categoryButton = buttonBuilder.activate(this, "category_btn")

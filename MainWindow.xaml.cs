@@ -17,6 +17,7 @@ using Velacro.UIElements.Basic;
 using Velacro.UIElements.Button;
 using Velacro.UIElements.TextBlock;
 using Velacro.UIElements.TextBox;
+using Velacro.UIElements.PasswordBox;
 
 namespace DolanKuyDesktopPalingbaru
 {
@@ -28,10 +29,11 @@ namespace DolanKuyDesktopPalingbaru
 
         private BuilderButton buttonBuilder;
         private BuilderTextBox txtBoxBuilder;
+        private BuilderPasswordBox passBoxBuilder;
         private BuilderTextBlock txtBlockBuilder;
         private IMyButton loginButton;
         private IMyTextBox emailTxtBox;
-        private IMyTextBox passwordTxtBox;
+        private IMyPasswordBox passwordTxtBox;
         private IMyTextBlock loginStatusTxtBlock;
         private MyWindow dashboard;
         //private MyPage dashboard = new Dashboard.Dashboard();
@@ -50,6 +52,7 @@ namespace DolanKuyDesktopPalingbaru
             buttonBuilder = new BuilderButton();
             txtBoxBuilder = new BuilderTextBox();
             txtBlockBuilder = new BuilderTextBlock();
+            passBoxBuilder = new BuilderPasswordBox();
         }
 
         private void initUIElements()
@@ -59,13 +62,13 @@ namespace DolanKuyDesktopPalingbaru
                 .activate(this, "loginButton_btn")
                 .addOnClick(this, "onLoginButtonClick");
             emailTxtBox = txtBoxBuilder.activate(this, "email_txt");
-            passwordTxtBox = txtBoxBuilder.activate(this, "password_txt");
+            passwordTxtBox = passBoxBuilder.activate(this, "password_txt");
             loginStatusTxtBlock = txtBlockBuilder.activate(this, "loginStatus");
         }
 
         public void onLoginButtonClick()
         {
-            getController().callMethod("login", email_txt.Text, password_txt.Text);
+            getController().callMethod("login", emailTxtBox.getText(), passwordTxtBox.getPassword());
             
 
         }
