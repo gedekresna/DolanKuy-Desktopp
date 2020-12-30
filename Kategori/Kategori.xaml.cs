@@ -100,5 +100,7 @@ namespace DolanKuyDesktopPalingbaru.Kategori
                 serviceList.ItemsSource = categoryList;
             }));
         }
+
+        
     }
 }
