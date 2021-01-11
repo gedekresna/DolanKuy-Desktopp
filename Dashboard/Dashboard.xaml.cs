@@ -60,5 +60,10 @@ namespace DolanKuyDesktopPalingbaru.Dashboard
             createPage = new CreateLokasi.CreatePage(this.token);
             mainFrame.Navigate(createPage);
         }
+
+        private void about_us_click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

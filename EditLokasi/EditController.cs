@@ -19,6 +19,7 @@ namespace DolanKuyDesktopPalingbaru.EditLokasi
             //this.editPage = editPage;
         }
 
+        /*
         //revisi backend
         public async void getCategory()
         {
@@ -31,7 +32,7 @@ namespace DolanKuyDesktopPalingbaru.EditLokasi
                 .setRequestMethod(HttpMethod.Get);
             client.setOnSuccessRequest(setItem);
             var response = await client.sendRequest(request.getApiRequestBundle());
-        }
+        }*/
 
         //Update
         public async void putCategory(String _categoryName, int _categoryId)
@@ -48,20 +49,37 @@ namespace DolanKuyDesktopPalingbaru.EditLokasi
             var response = await client.sendRequest(request.getApiRequestBundle());
         }
 
+
+        public async void getCategory( int _categoryId)
+        {
+            Console.WriteLine("TEst");
+            var client = new ApiClient("http://127.0.0.1:8000/");
+            var request = new ApiRequestBuilder();
+
+            var req = request
+                .buildHttpRequest()
+                .setEndpoint("api/category/" + _categoryId)
+                .setRequestMethod(HttpMethod.Get);
+            client.setOnSuccessRequest(setItem);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+        }
+
+
+
         private void setItem(HttpResponseBundle _response)
         {
             if (_response.getHttpResponseMessage().Content != null)
             {
 
-                if (_response.getParsedObject<RootCategory>().category != null)
+                if (_response.getParsedObject<Root>().category != null)
                 {
 
-                    getView().callMethod("setCategory", _response.getParsedObject<RootCategory>().category);
+                    getView().callMethod("setCategory", _response.getParsedObject<Root>().category);
 
                 }
                 else
                 {
-                    getView().callMethod("setCategory", new List<ModelCategory>());
+                    getView().callMethod("setCategory",new Root()  );
                 }
             }
         }
