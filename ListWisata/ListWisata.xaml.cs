@@ -63,5 +63,37 @@ namespace DolanKuyDesktopPalingbaru.ListWisata
                 serviceList.ItemsSource = locationList;
             }));
         }
+
+        private void editBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            // editPage = new EditLokasi.EditPage();
+            //this.NavigationService.Navigate(editPage);
+            Button button = sender as Button;
+            ModelListWisata dataObject = button.DataContext as ModelListWisata;
+            this.NavigationService.Navigate(new EditPageLokasi(dataObject.id));
+            //getController().callMethod("putCategory", dataObject.id);
+
+        }
+
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < listServices.Count; i++)
+            {
+                //listServices.ElementAt(i).id = actualId.ElementAt(i);
+            }
+
+            Button button = sender as Button;
+            ModelListWisata dataObject = button.DataContext as ModelListWisata;
+            Console.WriteLine(dataObject.id);
+            MessageBoxResult result = MessageBox.Show("Are you sure want to perform this action?", "Delete Service", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    getController().callMethod("deleteService", dataObject.id);
+
+                    break;
+            }
+        }
     }
 }

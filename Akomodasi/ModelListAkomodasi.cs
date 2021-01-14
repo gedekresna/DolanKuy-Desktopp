@@ -21,7 +21,7 @@ namespace DolanKuyDesktopPalingbaru.Akomodasi
             public int distance { get; set; }
         }
 
-        /* public class Galery
+        /*public class Galery
         {
             public int id { get; set; }
             public int list_location_id { get; set; }

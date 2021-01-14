@@ -90,7 +90,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditLokasi\EditPage.xaml">
+    <Page Include="EditCategory\EditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditPageLokasiii\EditPageLokasi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,11 +129,16 @@
     <Compile Include="Dashboard\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditLokasi\EditController.cs" />
-    <Compile Include="EditLokasi\EditPage.xaml.cs">
+    <Compile Include="EditCategory\EditController.cs" />
+    <Compile Include="EditCategory\EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditLokasi\ModelCategoryEdit.cs" />
+    <Compile Include="EditCategory\ModelCategoryEdit.cs" />
+    <Compile Include="EditPageLokasiii\EditLokasiController.cs" />
+    <Compile Include="EditPageLokasiii\EditPageLokasi.xaml.cs">
+      <DependentUpon>EditPageLokasi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditPageLokasiii\ModelLokasiEdit.cs" />
     <Compile Include="Kategori\CategoryController.cs" />
     <Compile Include="Kategori\Kategori.xaml.cs">
       <DependentUpon>Kategori.xaml</DependentUpon>
@@ -172,5 +181,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

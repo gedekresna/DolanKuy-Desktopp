@@ -54,5 +54,25 @@ namespace DolanKuyDesktopPalingbaru.Akomodasi
                 serviceList.ItemsSource = locationList;
             }));
         }
+
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < listServices.Count; i++)
+            {
+                //listServices.ElementAt(i).id = actualId.ElementAt(i);
+            }
+
+            Button button = sender as Button;
+            ModelListAkomodasi dataObject = button.DataContext as ModelListAkomodasi;
+            Console.WriteLine(dataObject.id);
+            MessageBoxResult result = MessageBox.Show("Are you sure want to perform this action?", "Delete Service", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    getController().callMethod("deleteService", dataObject.id);
+
+                    break;
+            }
+        }
     }
 }
