@@ -36,5 +36,23 @@ namespace DolanKuyDesktopPalingbaru.Akomodasi
                 getView().callMethod("setLocation", _response.getParsedObject<RootAkomodasi>().acomodation);
             }
         }
+
+        //Delete
+        public async void deleteService(int _locations_id)
+        {
+            var client = new ApiClient("http://127.0.0.1:8000/");
+            var request = new ApiRequestBuilder();
+            var req = request
+                .buildHttpRequest()
+                .setEndpoint("api/locations/delete/" + _locations_id)
+                .setRequestMethod(HttpMethod.Delete);
+            //client.setAuthorizationToken(token);
+            client.setOnSuccessRequest(setItem);
+            var response = await client.sendRequest(request.getApiRequestBundle());
+            Console.WriteLine(response.getHttpResponseMessage().ToString());
+            //Console.WriteLine(response.getJObject()["token"]);
+            //client.setAuthorizationToken(response.getJObject()["access_token"].ToString());
+
+        }
     }
 }
