@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DolanKuyDesktopPalingbaru.Kategori
+namespace DolanKuyDesktopPalingbaru.EditLokasi
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
-    public class ModelCategory
+    public class ModelCategoryEdit
     {
         public int id { get; set; }
         public string name { get; set; }
-        public string created_at { get; set; }
-        public string updated_at { get; set; }
+        public DateTime created_at { get; set; }
+        public DateTime updated_at { get; set; }
     }
 
-    public class RootCategory
+    public class Root
     {
-        public List<ModelCategory> category { get; set; }
-
+        public ModelCategoryEdit category { get; set; }
     }
+
 }

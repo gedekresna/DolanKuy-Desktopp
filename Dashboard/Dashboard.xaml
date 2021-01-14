@@ -15,6 +15,7 @@
             <Button Content="List Akomodasi" Height="36" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Montserrat" FontSize="10" Margin="0,0,0.4,0" Click="akomodasi_click" />
             <Button Content="List Wisata" Height="36" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Montserrat" FontSize="10" Margin="0,0,0.4,0" Click="wisata_click"/>
             <Button Content="Create Lokasi" Height="36" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Montserrat" FontSize="10" Margin="0,0,0.4,0" Click="create_lokasi_click"/>
+            <Button Content="About Us" Height="36" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Montserrat" FontSize="10" Margin="0,0,0.4,0" Click="about_us_click"/>
         </StackPanel>
         <Frame Name="mainFrame" NavigationUIVisibility="Hidden" Margin="134,0,0.333,-0.333"/>
         <Label Content="DolanKuy" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="124" FontFamily="Montserrat" FontWeight="Bold" Foreground="#FFFF6329" FontSize="22" Height="44" />

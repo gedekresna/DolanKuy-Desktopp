@@ -90,6 +90,7 @@ namespace DolanKuyDesktopPalingbaru.Kategori
             Button button = sender as Button;
             ModelCategory dataObject = button.DataContext as ModelCategory;
             this.NavigationService.Navigate(new EditPage(dataObject.id));
+            //getController().callMethod("putCategory", dataObject.id);
 
         }
 

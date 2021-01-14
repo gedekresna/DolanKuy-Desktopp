@@ -74,6 +74,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AboutUs\AboutUsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Akomodasi\Akomodasi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -102,6 +106,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AboutUs\AboutUsPage.xaml.cs">
+      <DependentUpon>AboutUsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Akomodasi\Akomodasi.xaml.cs">
       <DependentUpon>Akomodasi.xaml</DependentUpon>
     </Compile>
@@ -122,6 +129,7 @@
     <Compile Include="EditLokasi\EditPage.xaml.cs">
       <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditLokasi\ModelCategoryEdit.cs" />
     <Compile Include="Kategori\CategoryController.cs" />
     <Compile Include="Kategori\Kategori.xaml.cs">
       <DependentUpon>Kategori.xaml</DependentUpon>

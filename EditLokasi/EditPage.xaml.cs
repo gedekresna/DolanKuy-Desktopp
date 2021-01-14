@@ -34,17 +34,10 @@ namespace DolanKuyDesktopPalingbaru.EditLokasi
             initUIBuilders();
             initUIElements();
             this.id = id;
+            getController().callMethod("getCategory", this.id);
         }
 
-        private void setController(EditController editController)
-        {
-            // throw new NotImplementedException();
-        }
-
-        /*public static implicit operator MyPage(EditPage v)
-        {
-            throw new NotImplementedException();
-        }*/
+       
 
         private BuilderButton buttonBuilder;
         private BuilderTextBox txtBoxBuilder;
@@ -71,33 +64,47 @@ namespace DolanKuyDesktopPalingbaru.EditLokasi
             editButton = buttonBuilder.activate(this, "edit_btn")
                 .addOnClick(this, "onEditButtonClick");
 
-            editName_tb1 = txtBoxBuilder.activate(this, "name_tb");
+            editName_tb1 = txtBoxBuilder.activate(this, "editName_tb");
             editDescription_tb1 = txtBoxBuilder.activate(this, "description_tb");
             editAddress_tb1 = txtBoxBuilder.activate(this, "address_tb");
             editContact_tb1 = txtBoxBuilder.activate(this, "contact_tb");
             editLatitude_tb1 = txtBoxBuilder.activate(this, "latitude_tb");
             editLongitude_tb1 = txtBoxBuilder.activate(this, "longitude_tb");
             editImage_tb1 = txtBoxBuilder.activate(this, "image_tb");
-            editCategory_tb1 = txtBoxBuilder.activate(this, "category_tb");
+            editCategory_tb1 = txtBoxBuilder.activate(this, "editCategory_tb");
             //createStatusTxtBlock = txtBlockBuilder.activate(this, "registerStatus");
         }
 
         public void onEditButtonClick()
         {
-            getController().callMethod("edit",
+            
+                Console.WriteLine("TEST");
+
+
+           
+                getController().callMethod("putCategory",
 
                 editName_tb1.getText(),
-                editDescription_tb1.getText(),
-                editAddress_tb1.getText(),
-                editContact_tb1.getText().ToString(),
-                editLatitude_tb1.getText(),
-                editLongitude_tb1.getText(),
-                editImage_tb1.getText(),
-                editCategory_tb1.getText()
-            );
-        }
+                 Int32.Parse(editCategory_tb1.getText())
 
-        public void setRegisterStatus(string _status)
+               );
+
+            
+
+      
+
+        /*
+        editDescription_tb1.getText(),
+        editAddress_tb1.getText(),
+        editContact_tb1.getText().ToString(),
+        editLatitude_tb1.getText(),
+        editLongitude_tb1.getText(),
+        editImage_tb1.getText(),
+        editCategory_tb1.getText()*/
+
+    }
+
+    public void setRegisterStatus(string _status)
         {
             this.Dispatcher.Invoke(() => {
                 editButton.setText(_status);
@@ -105,6 +112,18 @@ namespace DolanKuyDesktopPalingbaru.EditLokasi
 
         }
 
+        public void setCategory(ModelCategoryEdit category)
+        {
+            this.Dispatcher.Invoke(() => {
+                editName_tb.Text = category.name;
+                editCategory_tb.Text = Convert.ToString(category.id) ;
+            });
+            
+        }
 
+        private void editCategory_tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
